@@ -1,0 +1,1 @@
+.container{position:relative}.clear{clear:both}.animate,.loader_wrap{-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}.loader_wrap{background:#fff url(../images/loader.gif) no-repeat 50%;width:100%;height:100%;min-height:100px;position:fixed;left:0;top:0;opacity:.9;z-index:1}.loader_wrap.loaded{opacity:0;z-index:0}
