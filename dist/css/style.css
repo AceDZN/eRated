@@ -1,3 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900);
+body {
+  font-family: 'Roboto', sans-serif; }
+
+#app {
+  max-width: 970px;
+  margin: 20px auto; }
+
 .container {
   position: relative; }
 
@@ -9,6 +17,9 @@
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out; }
+
+img {
+  max-width: 100%; }
 
 .loader_wrap {
   background: #fff url("../images/loader.gif") no-repeat center center;
@@ -23,3 +34,89 @@
   .loader_wrap.loaded {
     opacity: 0;
     z-index: 0; }
+
+.widget-header {
+  background: #f4af01;
+  border: 1px solid #f4af01;
+  height: 15px; }
+
+.widget-body {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAANElEQVQIW2P89u3bfwY08PfvXwZGdAmQIDMzM6oETBBkAFwHsiBcAl0QLPH58+f/IDPRAQDCECZExa2HjgAAAABJRU5ErkJggg==) repeat;
+  border: 1px solid #E8E8E8;
+  height: 225px; }
+
+.widget-section {
+  padding: 5px;
+  box-sizing: border-box; }
+
+.profile-container {
+  border-right: 1px solid #ECECEC; }
+
+.profile-img, .profile-score {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 3px #c0c0c0;
+  position: relative;
+  z-index: 1;
+  float: left; }
+
+.profile-img img {
+  min-width: 80px; }
+
+.profile-score {
+  border-color: #f4af01;
+  z-index: 0;
+  margin-left: -9px;
+  font-weight: 100;
+  box-shadow: 0px 0px 0px #fff;
+  border-width: 1.4px; }
+  .profile-score .num {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-top: 13px;
+    color: #f4af01; }
+  .profile-score .type {
+    font-size: 18px;
+    line-height: .7;
+    color: #A2A2A2; }
+
+.profile-badge {
+  float: right;
+  max-width: 70px;
+  padding: 10px; }
+
+.profile-middle {
+  padding: 10px 20px 0;
+  color: #565656; }
+  .profile-middle h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0; }
+  .profile-middle p {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 300; }
+
+.social-tabs {
+  background: #fff;
+  padding: 10px; }
+  .social-tabs .tab {
+    width: 33.3%;
+    float: left; }
+    .social-tabs .tab.active {
+      color: #f4af01; }
+      .social-tabs .tab.active svg {
+        fill: #f4af01; }
+      .social-tabs .tab.active * {
+        color: #f4af01; }
+    .social-tabs .tab .clickable {
+      cursor: pointer; }
+  .social-tabs .middle-tab {
+    border-right: 1px solid #c0c0c0;
+    border-left: 1px solid #c0c0c0; }
+  .social-tabs .connections {
+    font-size: 10px;
+    color: #aeaeae; }
