@@ -11,8 +11,6 @@ module.exports = Reflux.createStore({
       jsonpCallback: 'callback'
     })
       .then(function(json){
-
-        console.log(json,"json");
         this.merchantData = json;
         this.triggerChange();
       }.bind(this));

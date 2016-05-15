@@ -14,6 +14,7 @@ module.exports = React.createClass({
   getInitialState : function(){
     return {
       loaded: false,
+      activeTab:'',
       userData: []
     }
   },
@@ -23,7 +24,7 @@ module.exports = React.createClass({
   render: function() {
     return <div>
       <Loader loaded={this.state.loaded} />
-      <Widget userData={this.state.userData} />
+      <Widget userData={this.state.userData} activeTab={this.state.activeTab} />
     </div>
   },
   setLoadClass: function(){

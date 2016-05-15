@@ -5,7 +5,7 @@ module.exports = React.createClass({
   render: function(){
     if(this.props.userData && this.props.userData.social_information){
       return (
-        <div className={"tab "+(this.props.activeTab == this.props.type ? 'active':'')}>
+        <div className={"tab col-xs-4 "+(this.props.activeTab == this.props.type ? 'active':'')}>
           {this.renderTab()}
         </div>
       )
