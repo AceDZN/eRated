@@ -31,7 +31,7 @@ module.exports = React.createClass({
           <SVGLoader width="80%" height="100%" svg={rep_provider.name+(this.props.activeTab==rep_provider.name ? 'Active':'')} key={this.props.type+'_key_svg'} fill="#d0d0d0" />
         </li>
       );
-      var content = <Tab className="content" activeTab={this.props.activeTab} provider={rep_provider} key={rep_provider.name+"_content_key"} />;
+      var content = <Tab className="content" name={this.props.userName} activeTab={this.props.activeTab} provider={rep_provider} key={rep_provider.name+"_content_key"} />;
       tabsHeader.push(header);
       tabsContent.push(content);
     }

@@ -4,6 +4,7 @@ var Reflux = require('reflux');
 var MerchantStore = require('../../stores/merchant-store');
 var ProfileBlock = require('./profile');
 var ReviewTabs = require('./reviewTabs/tabs');
+var ReviewSection = require('./reviewTabs/reviewSection');
 
 module.exports = React.createClass({
   mixins: [
@@ -29,7 +30,7 @@ module.exports = React.createClass({
               <div className="col-sm-4 widget-section">
                 {this.renderMiddleSection()}
               </div>
-              <div className="col-sm-4 widget-section">
+              <div className="col-sm-4 widget-section reviews-section">
                 {this.renderRightSection()}
               </div>
             </div>
@@ -40,7 +41,7 @@ module.exports = React.createClass({
   renderMiddleSection: function(){
     if(this.state.activeSection == 'rep'){
       return (
-        <ReviewTabs reputation={this.props.userData.relevant_reputation} activeTab={this.state.activeTab} changeTab={this.handleTabChange}  />
+        <ReviewTabs reputation={this.props.userData.relevant_reputation} userName={this.props.userData.first_name} activeTab={this.state.activeTab} changeTab={this.handleTabChange}  />
       )
     }
 
@@ -48,7 +49,7 @@ module.exports = React.createClass({
   renderRightSection: function(){
     if(this.state.activeSection == 'rep'){
       return (
-        <div>RIGHT</div>
+        <ReviewSection reputation={this.props.userData.relevant_reputation} userName={this.props.userData.first_name} activeTab={this.state.activeTab} changeTab={this.handleTabChange}  />
       )
     }
   },
@@ -59,7 +60,6 @@ module.exports = React.createClass({
     return
   },
   handleTabChange: function(tabContent){
-    console.log('tab:',tabContent);
     this.setState({
       activeTab:tabContent.name
     });

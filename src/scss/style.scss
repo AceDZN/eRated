@@ -25,8 +25,17 @@ body{
 img{
   max-width: 100%;
 }
+.small-text{
+  font-size: 14px;
+}
 .text-center{
   text-align:center;
+}
+.text-left{
+  text-align:left;
+}
+.text-right{
+  text-align:right;
 }
 .loader_wrap{
   @extend .animate;
@@ -68,26 +77,38 @@ img{
     float:none;
     padding:0;
   }
-  .col-xs-4,.col-xs-6,.col-xs-8{
+  .col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-10{
     float:left;
     padding:0;
+  }
+  .col-xs-2{
+    width: 16.66666667%;
+  }
+  .col-xs-3{
+    width: 25%;
   }
   .col-xs-4{
     width:33.33333333%;
   }
+  .col-xs-5 {
+    width: 41.66666667%;
+  }
   .col-xs-6 {
     width: 50%;
   }
+  .col-xs-7 {
+    width: 58.33333333%;
+  }
   .col-xs-8 {
     width: 66.66666667%;
+  }
+  .col-xs-10 {
+    width: 83.33333333%;
   }
 }
 .widget-section{
   padding: 5px;
   box-sizing: border-box;
-}
-.profile-container{
-  border-right:1px solid #ECECEC;
 }
 .profile-img,.profile-score{
   overflow: hidden;
@@ -225,32 +246,187 @@ div.tabs-content{
       opacity:1;
       height: 175px;
       max-height: 180px;
+      &.bigger{
+        height: 225px;
+        max-height: 225px;
+      }
     }
     div.inner{
-      padding:10px 30px;
+      padding:10px 10px;
+      &.nptb{
+        padding-top:0;
+        padding-bottom: 0;
+      }
     }
   }
 }
+
 .rate-wrap{
+  color: $dark-gray;
   &:after{
     @extend .clearfix;
   }
   h1{
+    margin:0;
     font-size:50px;
     color:#7c7c7c;
   }
   .rating-stars{
     float:right;
+    padding: 10px 0;
+  }
+  .rating-num{
+    margin-bottom: 10px;
   }
 }
+.characteristic-wrap{
+  color:$dark-gray;
+  font-weight: 300;
+}
 
-
+.progress {
+  height: 20px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;
+  .progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 9px;
+    line-height: 20px;
+    color: #fff;
+    text-align: right;
+    background-color: $main-color;
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+    span{
+      padding: 0 5px;
+    }
+  }
+}
+.review-tabs{
+  border-left:1px solid #ECECEC;
+  border-right:1px solid #ECECEC;
+}
+.no-results{
+  .bigger &{
+  padding: 30px 0;
+  }
+  h3{
+    font-size: 20px;
+    font-weight: 300;
+    color: #DEE2ED;
+  }
+  h5{
+    font-size: 13px;
+    font-weight: 300;
+    color: $dark-gray;
+  }
+  img{
+    max-width:75px;
+  }
+}
+.pager-wrap{
+  h1{
+    font-weight: 100;
+    font-size: 40px;
+    margin: 3px 0;
+    color:$dark-gray;
+    span{
+      font-size:16px;
+      font-weight: 300;
+    }
+  }
+  .reviews-pager{
+    width:100%;
+    height: 145px;
+    overflow:hidden;
+    position:relative;
+    .review-page{
+      @extend .animate;
+      width:100%;
+      min-height:100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      z-index:0;
+      &.active{
+        opacity: 1;
+        z-index:3;
+      }
+    }
+    .review-item{
+      font-size: 14px;
+      color:$dark-gray;
+      margin:10px 0;
+      padding: 0 0 0 20px;
+      line-height: 1.4;
+      &:before{
+        content:'';
+        background: $main-color;
+        border-radius: 50%;-moz-border-radius: 50%;-webkit-border-radius: 50%;
+        width: 15px;
+        display: inline-block;
+        text-align: center;
+        height: 15px;
+        line-height: 15px;
+        margin-left: -20px;
+        margin-right: 5px;
+        color: #FFF;
+        position: relative;
+        top: 0px;
+      }
+      &.positive:before{
+        content:'+'
+      }
+      &.negative:before{
+        content:'-'
+      }
+    }
+  }
+  .bullets-wrap{
+    @extend .text-center;
+    .bullet{
+      cursor:pointer;
+      width: 10px;
+      height: 10px;
+      margin: 0 2px;
+      border: 1px solid $main-color;
+      background: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      &.active{
+        background: $main-color;
+        border-color: #fff;
+      }
+    }
+  }
+}
 @media (min-width:600px){
   .widget-body{
     .col-sm-4{
       width:33.33333333%;
       float:left;
       padding:0;
+    }
+  }
+}
+@media (min-width:965px){
+  div.tabs-content{
+    .content{
+      div.inner{
+        padding:10px 25px;
+        &.nptb{
+          padding-top:0;
+          padding-bottom: 0;
+        }
+      }
     }
   }
 }
