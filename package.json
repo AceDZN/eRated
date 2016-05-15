@@ -37,6 +37,8 @@
   },
   "dependencies": {
     "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react-dom": "^15.0.1",
+    "reflux": "^0.3.0",
+    "whatwg-fetch": "^1.0.0"
   }
 }
