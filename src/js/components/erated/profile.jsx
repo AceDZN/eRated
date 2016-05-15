@@ -3,6 +3,11 @@ var Loader = require('../loader');
 var SocialTabs = require('./socialTabs/tabs');
 
 module.exports = React.createClass({
+  getInitialState: function(){
+    return({
+      activeTab:this.props.activeTab || ''
+    })
+  },
   render: function(){
     if(this.props.userData && this.props.userData.uid){
       return (
@@ -23,9 +28,10 @@ module.exports = React.createClass({
             <div className="profile-middle">
               {this.renderUserName()}
               {this.renderProfileRatingLine()}
+
             </div>
           </div>
-          <SocialTabs {...this.props} />
+          <SocialTabs {...this.props} activeTab={this.state.activeTab} changeTab={this.handleTabSelect} />
         </div>
       )
     } else {
@@ -70,15 +76,33 @@ module.exports = React.createClass({
       return (
         <p>
           {this.props.userData.total_rating.toFixed(1)}% positive feedback
+          {this.renderRepLink()}
         </p>
       )
     }
     return
   },
+  renderRepLink: function(){
+
+    if(this.state.activeTab && this.state.activeTab!="" && this.state.activeTab!='rep'){
+      return (
+        <span className="rep-link" onClick={this.handleRepSelect}>View my reputation</span>
+      )
+    }
+  },
   renderProfileBadge: function(){
-    if(!this.props.userData.top_rated){
+    if(this.props.userData.top_rated && this.props.userData.top_rated != false){
       return (<img src="images/top_merchant.png" />)
     }
+  },
+  handleRepSelect:  function(){
+    this.handleTabSelect('rep');
+  },
+  handleTabSelect: function(type){
+    this.setState({
+      activeTab: type
+    },this.props.changeTab(type));
+
   }
 
 });

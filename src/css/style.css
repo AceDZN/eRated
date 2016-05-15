@@ -89,7 +89,7 @@ img {
   padding: 10px; }
 
 .profile-middle {
-  padding: 10px 20px 0;
+  padding: 10px 0 0 20px;
   color: #565656; }
   .profile-middle h3 {
     font-size: 18px;
@@ -99,6 +99,14 @@ img {
     margin-top: 5px;
     margin-bottom: 0;
     font-weight: 300; }
+  .profile-middle .rep-link {
+    font-size: 10px;
+    float: right;
+    margin-top: 6px;
+    line-height: 1;
+    cursor: pointer; }
+    .profile-middle .rep-link:hover {
+      color: #f4af01; }
 
 .social-tabs {
   background: #fff;

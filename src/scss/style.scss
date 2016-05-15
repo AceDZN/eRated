@@ -99,7 +99,7 @@ img{
   padding: 10px;
 }
 .profile-middle{
-  padding:10px 20px 0;
+  padding:10px 0 0 20px;
   color: $dark-gray;
   h3{
     font-size: 18px;
@@ -110,6 +110,16 @@ img{
     margin-top:5px;
     margin-bottom: 0;
     font-weight: 300;
+  }
+  .rep-link{
+    font-size:10px;
+    float: right;
+    margin-top: 6px;
+    line-height: 1;
+    cursor:pointer;
+    &:hover{
+      color:$main-color
+    }
   }
 }
 .social-tabs{

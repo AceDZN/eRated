@@ -4,10 +4,9 @@ var SVGLoader = require('../../svgLoader');
 
 module.exports = React.createClass({
   render: function(){
-    console.log('this.state.activeTab',this.props.activeTab);
     if(this.props.userData && this.props.userData.social_information){
       return (
-        <div className={"tab "+(this.props.activeTab == this.props.type ? 'active')}>
+        <div className={"tab "+(this.props.activeTab == this.props.type ? 'active':'')}>
           {this.renderTab()}
         </div>
       )
