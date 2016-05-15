@@ -9,7 +9,7 @@ module.exports = React.createClass({
   },
   render: function(){
       return (
-        <div className={"loader_wrap animate "+ this.getLoadClass()}></div>
+        <div className={"loader_wrap animate "+this.props.className+" "+this.getLoadClass()}></div>
       );
   },
 

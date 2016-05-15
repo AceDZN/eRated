@@ -34,6 +34,12 @@ img {
   .loader_wrap.loaded {
     opacity: 0;
     z-index: 0; }
+  .loader_wrap.inner {
+    background-color: transparent;
+    position: relative;
+    min-height: 200px;
+    z-index: 0;
+    opacity: 0.5; }
 
 .widget-header {
   background: #f4af01;

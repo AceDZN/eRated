@@ -41,6 +41,14 @@ img{
     opacity: 0;
     z-index: 0;
   }
+  &.inner{
+    background-color:transparent;
+    position:relative;
+    min-height: 200px;
+    z-index:0;
+    opacity:0.5;
+
+  }
 }
 
 .widget-header{

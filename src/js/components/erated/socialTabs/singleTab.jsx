@@ -1,5 +1,4 @@
 var React = require('react');
-var Loader = require('../../loader');
 var SVGLoader = require('../../svgLoader');
 
 module.exports = React.createClass({
@@ -10,11 +9,8 @@ module.exports = React.createClass({
           {this.renderTab()}
         </div>
       )
-    } else {
-      return(
-        <Loader loaded={false} />
-      )
     }
+    return
   },
   getConnectionLabel: function(){
     switch(this.props.type){
@@ -57,6 +53,6 @@ module.exports = React.createClass({
     }
   },
   handleClick: function(type){
-    this.props.changeTab(type);
+    this.props.changeSection(type);
   }
 });

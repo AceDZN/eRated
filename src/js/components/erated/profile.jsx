@@ -31,7 +31,7 @@ module.exports = React.createClass({
 
             </div>
           </div>
-          <SocialTabs {...this.props} activeTab={this.state.activeTab} changeTab={this.handleTabSelect} />
+          <SocialTabs {...this.props} activeTab={this.state.activeTab} changeSection={this.handleSectionSelect} />
         </div>
       )
     } else {
@@ -96,12 +96,12 @@ module.exports = React.createClass({
     }
   },
   handleRepSelect:  function(){
-    this.handleTabSelect('rep');
+    this.handleSectionSelect('rep');
   },
-  handleTabSelect: function(type){
+  handleSectionSelect: function(type){
     this.setState({
       activeTab: type
-    },this.props.changeTab(type));
+    },this.props.changeSection(type));
 
   }
 

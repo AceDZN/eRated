@@ -1,10 +1,13 @@
 var React = require('react');
 var ProfileBlock = require('./profile');
+var ReviewTabs = require('./reviewTabs/tabs');
 
 module.exports = React.createClass({
   getInitialState: function(){
     return {
-      loaderLoadClass: ''
+      loaderLoadClass: '',
+      activeSection: 'rep',
+      activeTab:''
     }
   },
 
@@ -15,21 +18,44 @@ module.exports = React.createClass({
           <div className="widget-body">
             <div className="row">
               <div className="col-sm-4">
-                <ProfileBlock userData={this.props.userData} changeTab={this.handleTabChange} />
+                <ProfileBlock userData={this.props.userData} changeSection={this.handleSectionChange} />
               </div>
               <div className="col-sm-4 widget-section">
-
+                {this.renderMiddleSection()}
               </div>
               <div className="col-sm-4 widget-section">
-                3
+                {this.renderRightSection()}
               </div>
             </div>
           </div>
         </div>
       );
   },
-  handleTabChange: function(type){
-    console.log('tab changed - '+type);
+  renderMiddleSection: function(){
+    if(this.state.activeSection == 'rep'){
+      return (
+        <ReviewTabs activeTab={this.state.activeTab} userData={this.props.userData}  />
+      )
+    }
+
+  },
+  renderRightSection: function(){
+    if(this.state.activeSection == 'rep'){
+      return (
+        <div>RIGHT</div>
+      )
+    }
+  },
+  handleSectionChange: function(type){
+    this.setState({
+      activeSection:type
+    });
+    return
+  },
+  handleTabChange: function(tab){
+    this.setState({
+      activeTab:tab
+    });
     return
   }
 

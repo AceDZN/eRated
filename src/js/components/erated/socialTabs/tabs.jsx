@@ -1,5 +1,6 @@
 var React = require('react');
 var Tab = require('./singleTab');
+var Loader = require('../../loader');
 module.exports = React.createClass({
 
   render: function(){
@@ -9,25 +10,26 @@ module.exports = React.createClass({
             {this.renderSocialTabs()}
           </div>
       )
-    } else {
-      return(
-        <Loader loaded={false} />
-      )
     }
+    return
   },
   renderSocialTabs: function(){
     if(this.props.userData.social_information){
       return(
         <div className="tabs-wrap">
-            <Tab {...this.props} changeTab={this.handleTabChange} type="facebook"  />
-            <Tab {...this.props} changeTab={this.handleTabChange} type="linkedin" className="middle-tab" />
-            <Tab {...this.props} changeTab={this.handleTabChange} type="twitter" />
+            <Tab {...this.props} changeSection={this.handleTabChange} type="facebook"  />
+            <Tab {...this.props} changeSection={this.handleTabChange} type="linkedin" className="middle-tab" />
+            <Tab {...this.props} changeSection={this.handleTabChange} type="twitter" />
           <div className="clear"></div>
         </div>
+      )
+    } else {
+      return(
+        <Loader className="inner" loaded={false} />
       )
     }
   },
   handleTabChange: function(type){
-    this.props.changeTab(type);
+    this.props.changeSection(type);
   }
 });
