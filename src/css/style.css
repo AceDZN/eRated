@@ -117,7 +117,7 @@ img {
   box-shadow: 0px 0px 0px #fff;
   border-width: 1.4px; }
   .profile-score .num {
-    font-size: 22px;
+    font-size: 25px;
     line-height: 1.4;
     margin-top: 13px;
     color: #f4af01; }
@@ -133,13 +133,14 @@ img {
   box-sizing: border-box; }
 
 .profile-middle {
-  padding: 10px 0 0 20px;
+  padding: 10px 10px 0 20px;
   color: #565656; }
   .profile-middle h3 {
     font-size: 18px;
     font-weight: 400;
     margin: 0; }
   .profile-middle p {
+    font-size: 13px;
     margin-top: 5px;
     margin-bottom: 0;
     font-weight: 300; }

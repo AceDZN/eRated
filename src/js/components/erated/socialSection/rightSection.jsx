@@ -124,12 +124,12 @@ module.exports = React.createClass({
       );
     }
   },
-  renderEmptyReviews: function(type){
+  renderEmptyReviews: function(){
     return (
       <div className="text-center no-results">
         <SVGLoader width="100%" height="100" svg="reviewStar" key="review_star_key_svg" fill="#DEE2ED" />
         <h3>
-          Your {type} reviews<br />will appear here
+          Your reviews will appear here
         </h3>
       </div>
     )
