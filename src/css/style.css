@@ -129,7 +129,8 @@ img {
 .profile-badge {
   float: right;
   max-width: 70px;
-  padding: 10px; }
+  padding: 10px;
+  box-sizing: border-box; }
 
 .profile-middle {
   padding: 10px 0 0 20px;

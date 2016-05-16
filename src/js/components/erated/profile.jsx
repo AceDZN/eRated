@@ -97,7 +97,16 @@ module.exports = React.createClass({
     }
   },
   renderProfileBadge: function(){
-    if(this.props.userData.top_rated && this.props.userData.top_rated != false){
+    var top_rated = false;
+    if(this.props.userData.relevant_reputation){
+      for(var i=0; i<this.props.userData.relevant_reputation.length;i++ ){
+        if(this.props.userData.relevant_reputation[i].top_rated == true){
+          top_rated = true;
+        }
+
+      }
+    }
+    if(top_rated){
       return (<img src="images/top_merchant.png" />)
     }
   },
@@ -110,5 +119,4 @@ module.exports = React.createClass({
     },this.props.changeSection(type));
 
   }
-
 });
