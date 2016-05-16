@@ -57,11 +57,9 @@ module.exports = React.createClass({
           <div className="rating-stars text-right col-xs-8">
             {stars}
           </div>
-          <div className="rating-num small-text col-xs-10 text-left">
-            Number of Transactions made:
-          </div>
-          <div className="rating-num small-text col-xs-2 text-right">
-            {this.props.provider.total_reviews}
+          <div className="clear"></div>
+          <div className="rating-num small-text text-right">
+            Based on {this.props.provider.total_reviews} Reviews
           </div>
         </div>
         {this.renderStatistics()}
@@ -86,7 +84,6 @@ module.exports = React.createClass({
               <div className="progress">
                 <div className="progress-bar" style={progressStyle}>
                   <span>{parseFloat(((this.props.provider.characteristics[i].score / 100) * 5).toFixed(1))+"/5"}</span>
-
                 </div>
               </div>
             </div>
