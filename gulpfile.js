@@ -108,6 +108,8 @@ gulp.task('build', function() {
 gulp.task('copy', ['build','sass','compress'],function(){
   gulp.src('src/index.html')
     .pipe(gulp.dest('dist'));
+  gulp.src('src/demo.html')
+    .pipe(gulp.dest('dist'));
   gulp.src('src/files/*.*')
     .pipe(gulp.dest('dist/files'));
   gulp.src('src/css/*.*')

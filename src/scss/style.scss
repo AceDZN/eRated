@@ -5,10 +5,11 @@ $light-gray: #A2A2A2;
 $dark-gray: #565656;
 body{
   font-family: 'Roboto', sans-serif;
+  margin:0 auto;
 }
 #app{
   max-width:970px;
-  margin:20px auto;
+  margin:0 auto;
 }
 .container{
   position:relative;
@@ -72,6 +73,7 @@ img{
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAANElEQVQIW2P89u3bfwY08PfvXwZGdAmQIDMzM6oETBBkAFwHsiBcAl0QLPH58+f/IDPRAQDCECZExa2HjgAAAABJRU5ErkJggg==) repeat;
   border: 1px solid #E8E8E8;
   height: 225px;
+
   .col-sm-4{
     width:100%;
     float:none;
@@ -318,8 +320,7 @@ div.tabs-content{
   }
 }
 .middle-section{
-  border-top:1px solid #ECECEC;
-  border-bottom:1px solid #ECECEC;
+  border:1px solid #ECECEC;
 }
 .no-results{
   .bigger &{
@@ -543,6 +544,7 @@ div.tabs-content{
 
 @media (min-width:600px){
   .widget-body{
+    overflow:hidden;
     .col-sm-4{
       width:33.33333333%;
       float:left;
