@@ -44,7 +44,7 @@ module.exports = React.createClass({
     if(this.props.userData.social_information[this.props.type]){
       return(
           <div className={clickable+" text-center"} onClick={handleClick.bind(this,this.props.type)}>
-            <SVGLoader width="20" height="20" svg={this.props.type} key={this.props.type+'_key_svg'} fill="#272727" />
+            <SVGLoader width="20" height="20" svg={this.props.type} key={this.props.type+'_key_svg'} fill="#6C6C6C" />
             <div className={this.props.className}>
               {connections}
               <div className="connections">{this.getConnectionLabel()}</div>

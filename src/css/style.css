@@ -141,8 +141,7 @@ img {
     margin: 0; }
   .profile-middle p {
     font-size: 13px;
-    margin-top: 5px;
-    margin-bottom: 0;
+    margin: 5px 0;
     font-weight: 300; }
   .profile-middle .rep-link {
     font-size: 12px;
@@ -158,14 +157,16 @@ img {
 .social-tabs {
   background: #fff;
   padding: 10px; }
-  .social-tabs .tab.active {
-    color: #f4af01; }
-    .social-tabs .tab.active svg {
-      fill: #f4af01; }
-    .social-tabs .tab.active * {
+  .social-tabs .tab {
+    color: #6C6C6C; }
+    .social-tabs .tab.active {
       color: #f4af01; }
-  .social-tabs .tab .clickable {
-    cursor: pointer; }
+      .social-tabs .tab.active svg {
+        fill: #f4af01; }
+      .social-tabs .tab.active * {
+        color: #f4af01; }
+    .social-tabs .tab .clickable {
+      cursor: pointer; }
   .social-tabs .middle-tab {
     border-right: 1px solid #c0c0c0;
     border-left: 1px solid #c0c0c0; }
@@ -233,6 +234,8 @@ div.tabs-content {
     float: right;
     padding: 10px 0; }
   .rate-wrap .rating-num {
+    font-size: 12px;
+    font-weight: 300;
     margin-bottom: 10px;
     color: #A2A2A2; }
 

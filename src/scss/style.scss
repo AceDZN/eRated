@@ -162,8 +162,7 @@ img{
   }
   p{
     font-size:13px;
-    margin-top:5px;
-    margin-bottom: 0;
+    margin:5px 0;
     font-weight: 300;
   }
   .rep-link{
@@ -183,6 +182,7 @@ img{
   background: #fff;
   padding:10px;
   .tab {
+    color:#6C6C6C;
     &.active{
       color:$main-color;
       svg{
@@ -283,6 +283,8 @@ div.tabs-content{
     padding: 10px 0;
   }
   .rating-num{
+    font-size: 12px;
+    font-weight:300;
     margin-bottom: 10px;
     color:$light-gray;
   }
