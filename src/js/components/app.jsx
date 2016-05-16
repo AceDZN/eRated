@@ -19,7 +19,11 @@ module.exports = React.createClass({
     }
   },
   componentWillMount: function(){
-    Actions.getMerchantData();
+    if(this.props.params.sha){
+      Actions.getMerchantData(this.props.params.sha);
+    } else {
+      Actions.getMerchantData();
+    }
   },
   render: function() {
     return <div>

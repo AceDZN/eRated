@@ -6,8 +6,15 @@ var users = ['019a9a16bc2fa50aaa005bbb9c16447d2b32de1d','4d24120531ac6988984570a
 
 module.exports = Reflux.createStore({
   listenables: [Actions],
-  getMerchantData: function(){
-    return Api.get(users[1],{
+  getMerchantData: function(sha){
+    if(sha && sha !=undefined){
+      this.callApi(sha);
+    }else{
+      this.callApi(users[0]);
+    }
+  },
+  callApi: function(sha){
+    return Api.get(sha,{
       jsonpCallback: 'callback'
     })
       .then(function(json){

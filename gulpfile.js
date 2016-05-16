@@ -144,7 +144,7 @@ gulp.task('serve', ['copy'], function(done) {
 });
 
 
-gulp.task('default',['build','sass','compress','copy','serve'], function(){
+gulp.task('default',['apply-prod-environment','build','sass','compress','copy','serve'], function(){
   return gulp.watch('src/**/*.*',  batch(function (events, done) {
     gulp.start('default', done);
   }))
