@@ -33,7 +33,7 @@ module.exports = React.createClass({
   renderPager: function(){
     return(
       <div className="pager-wrap">
-        <h1>Reviews <span>({this.props.provider.total_reviews}+)</span></h1>
+        <h1>Reviews <span>({this.props.provider.reviews.length}+)</span></h1>
         <div className="reviews-pager">
           {this.renderReviews()}
         </div>
@@ -62,13 +62,15 @@ module.exports = React.createClass({
     for(var i=0; i<(this.props.provider.reviews.length/3); i++){
       var reviews = [];
       for(var k=0; k<3;k++){
-        var review = (
-          <div key={this.props.provider.name+"_review_"+k} className={"review-item "+this.props.provider.reviews[count].review_type}>
-            {this.props.provider.reviews[count].review_content}
-          </div>
-        );
-        count++;
-        reviews.push(review);
+        if(this.props.provider.reviews[count]){
+          var review = (
+            <div key={this.props.provider.name+"_review_"+k} className={"review-item "+this.props.provider.reviews[count].review_type}>
+              {this.props.provider.reviews[count].review_content}
+            </div>
+          );
+          count++;
+          reviews.push(review);
+        }
       }
       var reviewsPage = (
         <div key={this.props.provider.name+"_page_"+i} className={"review-page "+ (this.state.activePage == i ? 'active': '')}>

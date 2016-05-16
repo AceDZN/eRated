@@ -5,7 +5,8 @@ var MerchantStore = require('../../stores/merchant-store');
 var ProfileBlock = require('./profile');
 var ReviewTabs = require('./reviewTabs/tabs');
 var ReviewSection = require('./reviewTabs/reviewSection');
-
+var MiddleSocial = require('./socialSection/middleSection');
+var RightSocial = require('./socialSection/rightSection');
 module.exports = React.createClass({
   mixins: [
     Reflux.listenTo(MerchantStore,'onChange')
@@ -27,7 +28,7 @@ module.exports = React.createClass({
               <div className="col-sm-4">
                 <ProfileBlock userData={this.props.userData} changeSection={this.handleSectionChange} />
               </div>
-              <div className="col-sm-4 widget-section">
+              <div className="col-sm-4 widget-section  middle-section">
                 {this.renderMiddleSection()}
               </div>
               <div className="col-sm-4 widget-section reviews-section">
@@ -43,13 +44,20 @@ module.exports = React.createClass({
       return (
         <ReviewTabs reputation={this.props.userData.relevant_reputation} userName={this.props.userData.first_name} activeTab={this.state.activeTab} changeTab={this.handleTabChange}  />
       )
+    } else {
+      return(
+        <MiddleSocial provider={this.state.activeSection} social={this.props.userData.social_information} userName={this.props.userData.first_name} activeSection={this.state.activeSection} />
+      )
     }
-
   },
   renderRightSection: function(){
     if(this.state.activeSection == 'rep'){
       return (
         <ReviewSection reputation={this.props.userData.relevant_reputation} userName={this.props.userData.first_name} activeTab={this.state.activeTab} changeTab={this.handleTabChange}  />
+      )
+    } else {
+      return(
+        <RightSocial provider={this.state.activeSection} social={this.props.userData.social_information} userName={this.props.userData.first_name} activeSection={this.state.activeSection} />
       )
     }
   },

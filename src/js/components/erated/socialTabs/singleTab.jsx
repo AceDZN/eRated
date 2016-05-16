@@ -30,10 +30,11 @@ module.exports = React.createClass({
   renderTab: function(){
     var connections = '---';
     var clickable="";
-    if(this.props.userData.social_information[this.props.type].connections > 1 || this.props.userData.social_information[this.props.type].connections == '500+'){
-      clickable="clickable";
+    if(this.props.userData.social_information[this.props.type]){
+      if(this.props.userData.social_information[this.props.type].connections > 1 || this.props.userData.social_information[this.props.type].connections == '500+'){
+      clickable=(this.props.type!='twitter' ? "clickable":"");
       connections = this.props.userData.social_information[this.props.type].connections;
-
+      }
     }
     var handleClick = function(){};
     if(clickable == "clickable"){

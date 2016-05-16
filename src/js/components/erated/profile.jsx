@@ -43,11 +43,16 @@ module.exports = React.createClass({
   renderUserName: function(){
     if(this.props.userData.display_name && this.props.userData.display_name != ''){
       return (
-        <h3 className="profile-name">{this.props.userData.display_name}</h3>
+        <h3 className="profile-name">{this.props.userData.display_name}{this.renderRepLink()}</h3>
       )
     }
   },
   renderProfileImage: function(){
+    if(this.props.userData.widget_settings.profile_image){
+      return (
+        <img src={this.props.userData.widget_settings.profile_image} />
+      )
+    }
     if(this.props.userData.profile_image_link && this.props.userData.profile_image_link != ''){
       return (
         <img src={this.props.userData.profile_image_link} />
@@ -61,10 +66,11 @@ module.exports = React.createClass({
     }
   },
   renderProfileRating: function(){
+    var rate = parseFloat((this.props.userData.total_rating).toFixed(1));
     if(this.props.userData.total_rating && this.props.userData.total_rating != ''){
       return (
         <div>
-          <div className="num">{this.props.userData.total_rating.toFixed(1)}%</div>
+          <div className="num">{rate}%</div>
           <div className="type">Positive</div>
         </div>
       )
@@ -72,11 +78,11 @@ module.exports = React.createClass({
     return
   },
   renderProfileRatingLine: function(){
+    var rate = parseFloat((this.props.userData.total_rating).toFixed(1));
     if(this.props.userData.total_rating && this.props.userData.total_rating != ''){
       return (
         <p>
-          {this.props.userData.total_rating.toFixed(1)}% positive feedback
-          {this.renderRepLink()}
+          {rate}% positive feedback
         </p>
       )
     }

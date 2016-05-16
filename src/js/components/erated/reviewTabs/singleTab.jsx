@@ -31,7 +31,7 @@ module.exports = React.createClass({
         <h5>
           We are still collecting information about {this.props.name}.
         </h5>
-        <img src="./images/no-results1.png" className="no-results-img" />
+        <img src="./images/no_results.png" />
       </div>
 
   )
@@ -85,7 +85,8 @@ module.exports = React.createClass({
             <div className="col-xs-5">
               <div className="progress">
                 <div className="progress-bar" style={progressStyle}>
-                  <span>{this.props.provider.characteristics[i].score+"%"}</span>
+                  <span>{parseFloat(((this.props.provider.characteristics[i].score / 100) * 5).toFixed(1))+"/5"}</span>
+
                 </div>
               </div>
             </div>

@@ -61,6 +61,20 @@ module.exports = React.createClass({
               </svg>
             );
             break;
+          case "work":
+            return (
+              <svg onMouseEnter={this.onHoverIn} onMouseLeave={this.onHoverOut} className={this.state.className} width={this.props.width} height={this.props.height} fill={this.props.fill} viewBox="-909 491 100 100">
+                <path d="M-826.1 532.9v-13.3h-7.7c-.4-5.9-5.4-10.4-11.5-10.4h-28.3c-6.1 0-11.2 4.4-11.5 10.4h-7.6v12c1 2 3.1 5.9 7.5 8-.6.8-.9 1.8-.9 2.8v1.9c-3-1.2-5.2-3.1-6.7-5v29.2h66.7v-28c-2.8 2.6-5.9 4.1-8.1 4.7v-2.8c0-.7-.1-1.3-.4-1.9 2.6-1 7.1-3.3 8.5-7.6zm-11.9 9.5v7.6c0 .8-.7 1.4-1.5 1.4s-1.5-.6-1.5-1.4v-7.6c0-.6.5-1.2 1.1-1.3h.9c.6.2 1 .7 1 1.3zm-35.6-30.2h28.3c4.2 0 7.7 3.7 8.1 7.4h-44.4c.3-3.7 3.8-7.4 8-7.4zm-8.8 30.2c0-.8.7-1.4 1.5-1.4s1.5.6 1.5 1.4v7.6c0 .8-.7 1.4-1.5 1.4s-1.5-.6-1.5-1.4v-7.6zm5.7-1.3h33c-.1.4-.2.9-.2 1.3v3.1h-32.6v-3.1c0-.4 0-.9-.2-1.3z"/>
+              </svg>
+            );
+            break;
+          case "education":
+            return (
+              <svg onMouseEnter={this.onHoverIn} onMouseLeave={this.onHoverOut} className={this.state.className} width={this.props.width} height={this.props.height} fill={this.props.fill} viewBox="-909 491 100 100">
+                <path d="M-886.4 549.5c0-2-1.3-3.7-3.1-4.3-.2-2.3-.4-4.7-.6-7.2l46.6 16.1 31.2-30.1-51.5-13.7-41.2 22.6 12.4 4.3c.1 1.7.2 4.6.2 8-1.8.6-3.1 2.3-3.1 4.3 0 1.9 1.2 3.6 2.9 4.3-.2 4.3-.7 8.8-1.5 12.6 5.2.3 7.7 0 7.7 0s-1.1-5.2-2.1-13c1.2-.9 2.1-2.3 2.1-3.9zM-835.8 550.1l-7.5 7.1-33.4-12.2s-2.9 2.9-3.2 7.4c-.3 4.6 0 10.9 0 10.9s7.7-2 12 0 18 10.6 19.2 13.2c3.7-3.1 14.3-13.7 14.3-13.7s2.3-7.7 0-11.5c-1.4-1.2-1.4-1.2-1.4-1.2z"/>
+              </svg>
+            );
+            break;
           case "ebay":
             return (
               <svg onMouseEnter={this.onHoverIn} onMouseLeave={this.onHoverOut} className={this.state.className} width={this.props.width} height={this.props.height} fill={this.props.fill} viewBox="0 0 300 120.32412">
