@@ -12,7 +12,7 @@ Checkout this repo, install dependencies, then start the http-server process wit
 	> gulp
 ```
 ### Widget Examples
-:computer:   if you're on a desktop platform - You can find the check  [*widget demo page*](http://acedzn.com/ex/eRatedWidget/demo.html) at:
+:computer:   if you're on a desktop platform - You can find the [*widget demo page*](http://acedzn.com/ex/eRatedWidget/demo.html) at:
 [*acedzn.com/ex/eRatedWidget/demo.html*](http://acedzn.com/ex/eRatedWidget/demo.html)
 
 :iphone:   for any other platform - it's better to go straight to the [*app page*](http://acedzn.com/ex/eRatedWidget/) on this url:
